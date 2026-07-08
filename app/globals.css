@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbfaf8;
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(73, 19, 194, 0.08), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 0%, rgba(184, 147, 91, 0.07), transparent 55%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: #4913c2;
+  color: #fbfaf8;
+}
+
+/* Foco de teclado visible en toda la app */
+:focus-visible {
+  outline: 2px solid #4913c2;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Inputs del formulario ---------- */
+.f-input {
+  width: 100%;
+  border-radius: 0.65rem;
+  border: 1.5px solid #e6e1f0;
+  background-color: #ffffff;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.925rem;
+  color: #1a1523;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.f-input::placeholder {
+  color: #a79fc0;
+}
+.f-input:hover {
+  border-color: #cabdec;
+}
+.f-input:focus {
+  outline: none;
+  border-color: #4913c2;
+  box-shadow: 0 0 0 3px rgba(73, 19, 194, 0.12);
+}
+.f-input[aria-invalid="true"] {
+  border-color: #d64545;
+  background-color: #fdf4f4;
+}
+
+.f-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #4b3f66;
+  margin-bottom: 0.32rem;
+}
+
+.f-hint {
+  font-size: 0.72rem;
+  color: #d64545;
+  margin-top: 0.28rem;
+}
+
+.f-section-title {
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.05rem;
+  color: #2e0b85;
+}
+
+/* ---------- Documento (vista previa / PDF) ---------- */
+#documento-cuenta-cobro {
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+.doc-underline {
+  border-bottom: 1px solid #c9c2dc;
+  min-height: 1.35em;
+  display: inline-block;
+}
+
+/* Fuentes de firma manuscrita */
+.font-signature-alex {
+  font-family: var(--font-alex-brush), cursive;
+}
+.font-signature-allura {
+  font-family: var(--font-allura), cursive;
+}
+.font-signature-dancing {
+  font-family: var(--font-dancing-script), cursive;
+}
+
+/* Scrollbar sutil para paneles internos */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(73, 19, 194, 0.25);
+  border-radius: 8px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
