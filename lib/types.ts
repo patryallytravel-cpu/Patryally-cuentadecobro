@@ -43,8 +43,8 @@ export interface CuentaCobroData {
 }
 
 export const EMPRESA_POR_DEFECTO = {
-  nombre: "Patry Ally",
-  nit: "",
+  nombre: "Patryally SAS",
+  nit: "901.882.391-7",
 };
 
 export const DESTINATARIOS_CORREO = [

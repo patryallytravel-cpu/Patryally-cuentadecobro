@@ -159,7 +159,6 @@ export default function CuentaCobroForm({ data, onChange, errores }: Props) {
             <input
               type="text"
               className="f-input"
-              placeholder="900.XXX.XXX-X"
               value={data.empresaNit}
               onChange={(e) => onChange({ empresaNit: e.target.value })}
             />
@@ -205,13 +204,13 @@ export default function CuentaCobroForm({ data, onChange, errores }: Props) {
 
           <Campo label="Valor a cobrar (COP)" error={errores.valor} className="sm:max-w-xs">
             <div className="relative">
-              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-patry-ink/40 text-sm">
+              <span className="absolute left-1 top-1/2 -translate-y-1/2 text-patry-ink/40 text-sm">
                 $
               </span>
               <input
                 type="text"
                 inputMode="numeric"
-                className="f-input pl-7"
+                className="f-input pl-9"
                 placeholder="0"
                 value={formatearMiles(data.valor)}
                 aria-invalid={!!errores.valor}
@@ -274,14 +273,23 @@ export default function CuentaCobroForm({ data, onChange, errores }: Props) {
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Campo label="Banco / billetera" error={errores.banco}>
-            <input
-              type="text"
+            <select
               className="f-input"
-              placeholder="Ej: Bancolombia, Nequi, Daviplata"
               value={data.banco}
-              aria-invalid={!!errores.banco}
               onChange={(e) => onChange({ banco: e.target.value })}
-            />
+            >
+              <option value="">Selecciona...</option>
+              <option value="Bancolombia">Bancolombia</option>
+              <option value="Nequi">Nequi</option>
+              <option value="Daviplata">Daviplata</option>
+              <option value="Davivienda">Davivienda</option>
+              <option value="BBVA">BBVA</option>
+              <option value="Banco de Bogotá">Banco de Bogotá</option>
+              <option value="Banco de Occidente">Banco de Occidente</option>
+              <option value="Banco Agrario">Banco Agrario</option>
+              <option value="Banco Caja Social">Banco Caja Social</option>
+              <option value="Scotiabank Colpatria">Scotiabank Colpatria</option>
+            </select>
           </Campo>
           <Campo label="Tipo de cuenta">
             <select

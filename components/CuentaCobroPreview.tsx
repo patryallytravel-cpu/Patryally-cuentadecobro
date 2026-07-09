@@ -45,7 +45,7 @@ const CuentaCobroPreview = forwardRef<HTMLDivElement, Props>(({ data }, ref) => 
       {/* Empresa deudora */}
       <div className="mb-6">
         <p className="text-[0.95rem] font-semibold">
-          {data.empresaNombre || "Patry Ally"}
+          {data.empresaNombre}
         </p>
         {data.empresaNit && (
           <p className="text-xs text-patry-ink/60">NIT: {data.empresaNit}</p>

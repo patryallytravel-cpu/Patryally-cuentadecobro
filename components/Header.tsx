@@ -11,7 +11,7 @@ export default function Header() {
             width={168}
             height={168}
             priority
-            className="h-11 w-auto sm:h-14"
+            className="h-40 w-auto sm:h-48"
           />
           <a
             href="https://patryally.com/"
