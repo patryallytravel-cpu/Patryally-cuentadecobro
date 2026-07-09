@@ -7,11 +7,11 @@ async function capturarComoPdf(elemento: HTMLElement) {
   ]);
 
   const canvas = await html2canvas(elemento, {
-    scale: 2,
+    scale: 1.5,
     useCORS: true,
     backgroundColor: "#ffffff",
   });
-  const imgData = canvas.toDataURL("image/png");
+  const imgData = canvas.toDataURL("image/png",0.8);
 
   const pdf = new jsPDF({
     orientation: "portrait",
@@ -34,7 +34,7 @@ async function capturarComoPdf(elemento: HTMLElement) {
   }
 
   const x = (pageWidth - finalWidth) / 2;
-  pdf.addImage(imgData, "PNG", x, margin, finalWidth, finalHeight);
+  pdf.addImage(imgData, "JPEG", x, margin, finalWidth, finalHeight);
 
   return pdf;
 }
