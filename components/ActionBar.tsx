@@ -50,11 +50,15 @@ export default function ActionBar({ data, previewRef, onValidar, onLimpiar }: Pr
     setEstadoCorreo("cargando");
     try {
       const pdfBase64 = await obtenerPdfBase64(previewRef.current);
+
+      const { firmaImagen, firmaDibujo, ...datosLivianos } = data;
+
+
       const respuesta = await fetch("/api/enviar-correo", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          data,
+          data: datosLivianos,
           pdfBase64,
           nombreArchivo: nombreArchivoPdf(data),
         }),
