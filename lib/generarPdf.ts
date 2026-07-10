@@ -7,11 +7,11 @@ async function capturarComoPdf(elemento: HTMLElement) {
   ]);
 
   const canvas = await html2canvas(elemento, {
-    scale: 1.5,
+    scale: 1.2,
     useCORS: true,
     backgroundColor: "#ffffff",
   });
-  const imgData = canvas.toDataURL("image/png",0.8);
+  const imgData = canvas.toDataURL("image/png",0.7);
 
   const pdf = new jsPDF({
     orientation: "portrait",
