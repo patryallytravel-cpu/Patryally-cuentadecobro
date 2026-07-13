@@ -8,7 +8,7 @@ import ActionBar from "@/components/ActionBar";
 import { crearCuentaCobroVacia, type CuentaCobroData } from "@/lib/types";
 import { validarCuentaCobro } from "@/lib/validacion";
 
-const CLAVE_LOCALSTORAGE = "patryally-cuenta-cobro-v1";
+const CLAVE_LOCALSTORAGE = "patryally-cuenta-cobro-v2";
 
 type PestanaMovil = "formulario" | "vista";
 

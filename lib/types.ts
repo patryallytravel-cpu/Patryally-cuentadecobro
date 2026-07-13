@@ -28,6 +28,7 @@ export interface CuentaCobroData {
   declaranteRenta: boolean;
   contratoOtrosTrabajadores: boolean;
   obligadoFacturar: boolean;
+  personaNatural: boolean;
 
   // Datos de pago
   banco: string;
@@ -76,6 +77,7 @@ export function crearCuentaCobroVacia(): CuentaCobroData {
     declaranteRenta: true,
     contratoOtrosTrabajadores: false,
     obligadoFacturar: false,
+    personaNatural: true,
 
     banco: "",
     tipoCuentaBancaria: "Ahorros",

@@ -89,8 +89,9 @@ const CuentaCobroPreview = forwardRef<HTMLDivElement, Props>(({ data }, ref) => 
       {/* Declaración tributaria */}
       <div className="mb-8 text-[0.7rem] leading-relaxed text-patry-ink/65 text-justify">
         <p>
-          Yo, {nombre}, identificado(a) como aparece al pie de mi firma, como
-          persona natural residente en Colombia, dando alcance a lo dispuesto
+          Yo, {nombre}, identificado(a) como aparece al pie de mi firma, como  
+          {data.personaNatural ? " persona natural " : " persona jurídica "} 
+          residente en Colombia, dando alcance... residente en Colombia, dando alcance a lo dispuesto
           en el artículo 17 de la Ley 1819 y en el parágrafo 2 del artículo
           383 del Estatuto Tributario, para efectos de determinar el régimen
           de retención en la fuente que me es aplicable en materia de
@@ -100,11 +101,7 @@ const CuentaCobroPreview = forwardRef<HTMLDivElement, Props>(({ data }, ref) => 
         <p className="mt-1.5">
           a) Presto servicios u honorarios de manera personal.
           <br />
-          b) Para esta prestación del servicio a ustedes{" "}
-          {data.contratoOtrosTrabajadores ? "SÍ" : "NO"} he contratado o
-          vinculado dos o más trabajadores o contratistas.
-          <br />
-          c) {data.obligadoFacturar ? "SÍ" : "NO"} estoy obligado(a) a
+          b) {data.obligadoFacturar ? "SÍ" : "NO"} estoy obligado(a) a
           facturar.
         </p>
         <p className="mt-1.5">

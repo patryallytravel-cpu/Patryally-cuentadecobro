@@ -231,25 +231,22 @@ export default function CuentaCobroForm({ data, onChange, errores }: Props) {
             <input
               type="checkbox"
               className="mt-1 h-4 w-4 rounded border-patry-violet-soft accent-patry-violet"
-              checked={data.declaranteRenta}
-              onChange={(e) => onChange({ declaranteRenta: e.target.checked })}
+              checked={data.personaNatural}
+              onChange={(e) => onChange({ personaNatural: e.target.checked })}
             />
             <span className="text-sm text-patry-ink/75">
-              Soy persona declarante de renta
+              Actúo como persona natural
             </span>
           </label>
           <label className="flex items-start gap-2.5 cursor-pointer">
             <input
               type="checkbox"
               className="mt-1 h-4 w-4 rounded border-patry-violet-soft accent-patry-violet"
-              checked={data.contratoOtrosTrabajadores}
-              onChange={(e) =>
-                onChange({ contratoOtrosTrabajadores: e.target.checked })
-              }
+              checked={data.declaranteRenta}
+              onChange={(e) => onChange({ declaranteRenta: e.target.checked })}
             />
             <span className="text-sm text-patry-ink/75">
-              Para este servicio contraté a dos o más trabajadores o
-              contratistas
+              Soy persona declarante de renta
             </span>
           </label>
           <label className="flex items-start gap-2.5 cursor-pointer">
